@@ -6,4 +6,8 @@ export declare class Gasto {
     categoria: string;
     usuario: string;
     moneda: string;
+    TipoTransaccion: string;
+    cuenta: string;
+    chanchito: string;
+    tipo: string;
 }

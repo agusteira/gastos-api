@@ -19,6 +19,10 @@ let Gasto = class Gasto {
     categoria;
     usuario;
     moneda;
+    TipoTransaccion;
+    cuenta;
+    chanchito;
+    tipo;
 };
 exports.Gasto = Gasto;
 __decorate([
@@ -49,6 +53,22 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Gasto.prototype, "moneda", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Gasto.prototype, "TipoTransaccion", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Gasto.prototype, "cuenta", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Gasto.prototype, "chanchito", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Gasto.prototype, "tipo", void 0);
 exports.Gasto = Gasto = __decorate([
     (0, typeorm_1.Entity)()
 ], Gasto);

@@ -22,14 +22,26 @@ let GastosService = class GastosService {
     constructor(gastosRepository) {
         this.gastosRepository = gastosRepository;
     }
-    create(usuario) {
-        return this.gastosRepository.save(usuario);
+    create(gasto) {
+        return this.gastosRepository.save(gasto);
     }
     findAll() {
         return this.gastosRepository.find();
     }
     async remove(id) {
         await this.gastosRepository.delete(id);
+    }
+    async update(gasto) {
+        try {
+            const result = await this.gastosRepository.update(gasto.id, gasto);
+            if (result.affected === 0) {
+                throw new Error('No se encontró el gasto con el ID proporcionado');
+            }
+            return result;
+        }
+        catch (error) {
+            throw new Error(`Error al actualizar el gasto: ${error.message}`);
+        }
     }
 };
 exports.GastosService = GastosService;

@@ -22,4 +22,22 @@ export class Gasto {
 
   @Column() 
   moneda: string;
+
+  @Column() 
+  TipoTransaccion: string; //Ingreso - egreso
+
+  @Column() 
+  cuenta: string;
+
+  @Column() 
+  chanchito: string;
+
+  @Column() 
+  tipo: string; //Debito, credito, etc
+  /*
+  Falta agregar:
+    -cuenta (BNA, Uala, brubank, efectivo, etc)
+    -tipo de gasto (Debito, credito, efectivo)
+    -chanchito (Goce, Ahorro, etc)
+   */
 }

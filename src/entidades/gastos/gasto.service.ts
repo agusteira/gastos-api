@@ -11,8 +11,8 @@ export class GastosService {
     private gastosRepository: Repository<Gasto>,
   ) {}
 
-  create(usuario: Gasto): Promise<Gasto> {
-    return this.gastosRepository.save(usuario);
+  create(gasto: Gasto): Promise<Gasto> {
+    return this.gastosRepository.save(gasto);
   }
 
   findAll(): Promise<Gasto[]> {
@@ -26,4 +26,17 @@ export class GastosService {
   async remove(id: number): Promise<void> {
     await this.gastosRepository.delete(id);
   }
+
+  async update(gasto: Gasto): Promise<any> {
+    try {
+      const result = await this.gastosRepository.update(gasto.id, gasto);
+      if (result.affected === 0) {
+        throw new Error('No se encontró el gasto con el ID proporcionado');
+      }
+      return result;
+    } catch (error) {
+      throw new Error(`Error al actualizar el gasto: ${error.message}`);
+    }
+  }
+  
 }
