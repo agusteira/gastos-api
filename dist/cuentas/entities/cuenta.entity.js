@@ -9,67 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gasto = void 0;
+exports.Cuenta = void 0;
 const typeorm_1 = require("typeorm");
-let Gasto = class Gasto {
+let Cuenta = class Cuenta {
     id;
-    fecha;
-    descripcion;
-    monto;
-    categoria;
-    idUsuario;
-    moneda;
-    TipoTransaccion;
-    cuenta;
-    chanchito;
+    nombre;
     tipo;
+    moneda;
+    idUsuario;
 };
-exports.Gasto = Gasto;
+exports.Cuenta = Cuenta;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], Gasto.prototype, "id", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Date)
-], Gasto.prototype, "fecha", void 0);
+], Cuenta.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Gasto.prototype, "descripcion", void 0);
-__decorate([
-    (0, typeorm_1.Column)('float'),
-    __metadata("design:type", Number)
-], Gasto.prototype, "monto", void 0);
+], Cuenta.prototype, "nombre", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Gasto.prototype, "categoria", void 0);
+], Cuenta.prototype, "tipo", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Gasto.prototype, "idUsuario", void 0);
+], Cuenta.prototype, "moneda", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Gasto.prototype, "moneda", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Gasto.prototype, "TipoTransaccion", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Gasto.prototype, "cuenta", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Gasto.prototype, "chanchito", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Gasto.prototype, "tipo", void 0);
-exports.Gasto = Gasto = __decorate([
+], Cuenta.prototype, "idUsuario", void 0);
+exports.Cuenta = Cuenta = __decorate([
     (0, typeorm_1.Entity)()
-], Gasto);
-//# sourceMappingURL=gasto.entity.js.map
+], Cuenta);
+//# sourceMappingURL=cuenta.entity.js.map

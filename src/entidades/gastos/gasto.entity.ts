@@ -18,7 +18,7 @@ export class Gasto {
   categoria: string;
 
   @Column() // @OneToMany(() => Usuario, (usuario) => usuario.departamento)
-  usuario: string;
+  idUsuario: string;
 
   @Column() 
   moneda: string;

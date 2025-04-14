@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GastosModule } from './entidades/gastos/gastos.module';
 import { Gasto } from './entidades/gastos/gasto.entity';
+import { CuentasModule } from './cuentas/cuentas.module';
 import * as dotenv from 'dotenv';
 
 dotenv.config();  // Carga las variables de entorno desde el archivo .env
@@ -19,7 +20,8 @@ dotenv.config();  // Carga las variables de entorno desde el archivo .env
       entities: [Gasto], // Aquí colocas tus entidades
       synchronize: true,  // Esto hace que TypeORM sincronice las entidades con la base de datos
     }),
-    GastosModule
+    GastosModule,
+    CuentasModule
   ],
 })
 export class AppModule {}

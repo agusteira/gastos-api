@@ -4,7 +4,7 @@ export declare class Gasto {
     descripcion: string;
     monto: number;
     categoria: string;
-    usuario: string;
+    idUsuario: string;
     moneda: string;
     TipoTransaccion: string;
     cuenta: string;

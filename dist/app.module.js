@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const gastos_module_1 = require("./entidades/gastos/gastos.module");
 const gasto_entity_1 = require("./entidades/gastos/gasto.entity");
+const cuentas_module_1 = require("./cuentas/cuentas.module");
 const dotenv = require("dotenv");
 dotenv.config();
 let AppModule = class AppModule {
@@ -30,7 +31,8 @@ exports.AppModule = AppModule = __decorate([
                 entities: [gasto_entity_1.Gasto],
                 synchronize: true,
             }),
-            gastos_module_1.GastosModule
+            gastos_module_1.GastosModule,
+            cuentas_module_1.CuentasModule
         ],
     })
 ], AppModule);
