@@ -4,7 +4,13 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors();
+  app.enableCors(
+    {
+      origin: '*', // Permite todos los orígenes, ajusta según tu configuración
+      methods: ['GET', 'POST', 'PUT', 'DELETE'], // Asegúrate de permitir DELETE
+    }
+  );
+  
   // Configuración de Swagger
   const config = new DocumentBuilder()
     .setTitle('Mi API')

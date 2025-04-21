@@ -26,10 +26,13 @@ let CuentasService = class CuentasService {
         return this.cuentasRepository.save(cuenta);
     }
     findAll() {
+        console.log("Obteniendo objetos");
         return this.cuentasRepository.find();
     }
     async remove(id) {
+        console.log("Eliminando objeto");
         await this.cuentasRepository.delete(id);
+        console.log("Objeto eliminado");
     }
     async update(cuenta) {
         try {

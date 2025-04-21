@@ -29,12 +29,16 @@ export class GastosService {
 
   async update(gasto: Gasto): Promise<any> {
     try {
+      console.log(gasto)
       const result = await this.gastosRepository.update(gasto.id, gasto);
       if (result.affected === 0) {
+        
         throw new Error('No se encontró el gasto con el ID proporcionado');
       }
+      
       return result;
     } catch (error) {
+      console.log(error.message)
       throw new Error(`Error al actualizar el gasto: ${error.message}`);
     }
   }

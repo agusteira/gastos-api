@@ -6,4 +6,8 @@ export declare class GastosController {
     create(gasto: Gasto): Promise<Gasto>;
     findAll(): Promise<Gasto[]>;
     remove(id: number): Promise<void>;
+    update(gastoDto: Gasto): Promise<{
+        message: string;
+        data: any;
+    }>;
 }

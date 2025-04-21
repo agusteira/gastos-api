@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, NotFoundException } from '@nestjs/common';
 import { Gasto } from './gasto.entity';
 import { GastosService } from './gasto.service';
 
@@ -19,5 +19,19 @@ export class GastosController {  // Cambié el nombre del controlador a GastosCo
   @Delete(':id')
   remove(@Param('id') id: number): Promise<void> {
     return this.gastosServices.remove(id);
+  }
+
+  @Put()
+  update(@Body() gastoDto: Gasto) {
+    console.log("Actualizando datos")
+    return this.gastosServices.update(gastoDto)
+      .then(result => ({
+        message: 'Gasto actualizado correctamente',
+        data: result,
+      }))
+      .catch(error => {
+        console.log("No se pudo actualizar")
+        throw new NotFoundException(error.message);
+      });
   }
 }

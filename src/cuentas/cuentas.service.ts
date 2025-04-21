@@ -15,6 +15,7 @@ export class CuentasService {
     }
   
     findAll(): Promise<Cuenta[]> {
+      console.log("Obteniendo objetos")
       return this.cuentasRepository.find();
     }
   
@@ -23,7 +24,9 @@ export class CuentasService {
     }*/
   
     async remove(id: number): Promise<void> {
+      console.log("Eliminando objeto")
       await this.cuentasRepository.delete(id);
+      console.log("Objeto eliminado")
     }
   
     async update(cuenta: Cuenta): Promise<any> {

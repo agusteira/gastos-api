@@ -30,6 +30,18 @@ let GastosController = class GastosController {
     remove(id) {
         return this.gastosServices.remove(id);
     }
+    update(gastoDto) {
+        console.log("Actualizando datos");
+        return this.gastosServices.update(gastoDto)
+            .then(result => ({
+            message: 'Gasto actualizado correctamente',
+            data: result,
+        }))
+            .catch(error => {
+            console.log("No se pudo actualizar");
+            throw new common_1.NotFoundException(error.message);
+        });
+    }
 };
 exports.GastosController = GastosController;
 __decorate([
@@ -52,6 +64,13 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], GastosController.prototype, "remove", null);
+__decorate([
+    (0, common_1.Put)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [gasto_entity_1.Gasto]),
+    __metadata("design:returntype", void 0)
+], GastosController.prototype, "update", null);
 exports.GastosController = GastosController = __decorate([
     (0, common_1.Controller)('gastos'),
     __metadata("design:paramtypes", [gasto_service_1.GastosService])

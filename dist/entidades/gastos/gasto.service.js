@@ -33,6 +33,7 @@ let GastosService = class GastosService {
     }
     async update(gasto) {
         try {
+            console.log(gasto);
             const result = await this.gastosRepository.update(gasto.id, gasto);
             if (result.affected === 0) {
                 throw new Error('No se encontró el gasto con el ID proporcionado');
@@ -40,6 +41,7 @@ let GastosService = class GastosService {
             return result;
         }
         catch (error) {
+            console.log(error.message);
             throw new Error(`Error al actualizar el gasto: ${error.message}`);
         }
     }
